@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pinterest Video Downloader — Download Your Own or Authorized Videos | PIN VIDEO DOWNLOADER</title>
+<meta name="description" content="PIN VIDEO DOWNLOADER: validate Pinterest links, preview and download your own or authorized media, and use eight free browser-based image tools. No sign-up, privacy focused.">
+<link rel="canonical" href="https://pinvideodownloader.example.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PIN VIDEO DOWNLOADER">
+<meta property="og:title" content="Pinterest Video Downloader — Download Your Own or Authorized Videos | PIN VIDEO DOWNLOADER">
+<meta property="og:description" content="PIN VIDEO DOWNLOADER: validate Pinterest links, preview and download your own or authorized media, and use eight free browser-based image tools. No sign-up, privacy focused.">
+<meta property="og:url" content="https://pinvideodownloader.example.com/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#E60023">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"PIN VIDEO DOWNLOADER","url":"https://pinvideodownloader.example.com/","description":"An easy-to-use media utility for accessing and downloading your own or authorized Pinterest videos, plus free browser-based image tools."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is PIN VIDEO DOWNLOADER?","acceptedAnswer":{"@type":"Answer","text":"PIN VIDEO DOWNLOADER is an independent media utility. It validates Pinterest links, explains what can be downloaded with authorized access, lets you download direct media files you own, and includes a free set of image tools that run entirely in your browser."}},
+{"@type":"Question","name":"Is the website free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The image tools and link validation are free to use and do not require an account. Some features may depend on third-party services in the future, and any change would be announced on this page."}},
+{"@type":"Question","name":"Can I download every Pinterest video?","acceptedAnswer":{"@type":"Answer","text":"No. Not every Pinterest video can be downloaded. A video may be private, removed, region-restricted, or protected, and downloading is only appropriate when you own the content or have the rights holder"s permission. This site never bypasses Pinterest"s protections."}},
+{"@type":"Question","name":"Does the website work on Android?","acceptedAnswer":{"@type":"Answer","text":"Yes. The site is built mobile-first and works in modern Android browsers such as Chrome. The image tools process files on your device, so they also work on slower connections."}},
+{"@type":"Question","name":"Does it work on iPhone?","acceptedAnswer":{"@type":"Answer","text":"Yes, in a modern iPhone browser such as Safari or Chrome. Some iOS versions handle downloads differently — a file may open in a preview first, from where you can save it using the share option."}},
+{"@type":"Question","name":"Do I need an account?","acceptedAnswer":{"@type":"Answer","text":"No account is needed for link validation or any of the image tools."}},
+{"@type":"Question","name":"Why is a video unavailable?","acceptedAnswer":{"@type":"Answer","text":"Common reasons: the pin is private or deleted, the link is a short link that cannot be resolved here, the content is protected, or this copy of the site does not yet have an authorized media integration connected. The downloader explains the specific state whenever it can."}},
+{"@type":"Question","name":"Can I download someone else"s video?","acceptedAnswer":{"@type":"Answer","text":"Only if you have that person"s permission or another legal right to do so. Downloading other people"s content without permission can infringe copyright. You are responsible for how you use downloaded media."}},
+{"@type":"Question","name":"Are my links stored?","acceptedAnswer":{"@type":"Answer","text":"No. Links you paste are processed in your browser for validation and are not sent to or stored on our servers by this website. Your theme preference is stored only on your device. See the Privacy Policy for details."}},
+{"@type":"Question","name":"How can I contact support?","acceptedAnswer":{"@type":"Answer","text":"Use the Contact Us page. When the form backend is connected, messages are delivered to the site owner; the page also shows a direct email option."}}]}</script>
+</head>
+<body>
+<header class="site-header"><div class="container header-inner">
+<a class="logo" href="index.html" aria-label="PIN VIDEO DOWNLOADER home"><span class="logo-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/><path d="M12 21a9 9 0 1 1 9-9" fill="none" stroke="#fff" stroke-width="0"/></svg></span><span>PIN VIDEO<br style="display:none"> DOWNLOADER</span></a>
+<nav class="main-nav" id="mainNav" aria-label="Main navigation"><a href="index.html" class="active">Home</a><a href="index.html#downloader">Video Downloader</a><a href="index.html#tools">Image Tools</a><a href="index.html#how">How It Works</a><a href="index.html#faq">FAQ</a><a href="about.html">About Us</a><a href="contact.html">Contact Us</a></nav>
+<div class="header-actions">
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark or light mode">🌙</button>
+<button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+</div></div></header>
+
+<main>
+<section class="hero"><div class="container">
+<h1>Pinterest <span class="accent">Video Downloader</span></h1>
+<p class="sub">An easy-to-use media utility for accessing and downloading your own or authorized Pinterest videos.</p>
+<div class="downloader-card" id="downloader">
+<div class="url-row"><input type="url" id="pinUrl" placeholder="Paste a Pinterest link or a direct .mp4 link…" aria-label="Media URL" autocomplete="off"></div>
+<div class="url-actions">
+<button class="btn btn-ghost" id="pasteBtn">📋 Paste URL</button>
+<button class="btn btn-ghost" id="clearBtn">✕ Clear</button>
+<button class="btn btn-primary" id="previewBtn"><span class="spinner"></span> Preview</button>
+<button class="btn btn-primary" id="downloadBtn">⬇ Download</button>
+</div>
+<div class="msg" id="dlMsg" role="status"></div>
+<div class="preview-box" id="previewBox">
+<div class="preview-grid">
+<div class="preview-media" id="previewMedia"></div>
+<div><table class="meta-table"><tbody id="metaBody"></tbody></table>
+<div class="progress-wrap" id="progressWrap"><div class="progress-bar" id="progressBar"></div></div>
+<div class="url-actions">
+<a class="btn btn-ghost" id="openOriginal" href="#" target="_blank" rel="noopener">Open Original</a>
+<button class="btn btn-ghost" id="retryBtn">↻ Retry</button>
+</div></div></div></div>
+<p class="fineprint">Only download media you own or have permission to use. This tool never asks for your Pinterest password and never bypasses Pinterest's protections. Pinterest page downloads require an authorized integration — if one is not connected, the tool will tell you honestly instead of showing a fake download.</p>
+</div>
+<div class="ad-slot" aria-label="Advertisement space">ADVERTISEMENT SPACE — RESERVED</div>
+</div></section>
+
+<section class="section" id="how"><div class="container">
+<h2>How It Works</h2><p class="lead">Three simple steps.</p>
+<div class="grid grid-3">
+<div class="card"><div class="step-num">1</div><h3>Copy the Link</h3><p>Copy your authorized Pinterest media link from the Pinterest app or website — or use a direct link to media you host yourself.</p></div>
+<div class="card"><div class="step-num">2</div><h3>Paste It Here</h3><p>Paste the link into the input box above and tap Preview. The link is validated instantly, in your browser.</p></div>
+<div class="card"><div class="step-num">3</div><h3>Preview &amp; Download</h3><p>Preview the media and download it when authorized access is available for that link.</p></div>
+</div></div></section>
+
+<section class="section alt" id="tools"><div class="container">
+<h2>Free Image Tools</h2><p class="lead">Eight practical tools that run entirely in your browser — your images are never uploaded anywhere.</p>
+<div class="tool-tabs"><button class="tool-tab active" data-tool="compressor">Image Compressor</button><button class="tool-tab" data-tool="resizer">Image Resizer</button><button class="tool-tab" data-tool="jpg2png">JPG to PNG Converter</button><button class="tool-tab" data-tool="png2jpg">PNG to JPG Converter</button><button class="tool-tab" data-tool="webp">WEBP Converter</button><button class="tool-tab" data-tool="cropper">Image Cropper</button><button class="tool-tab" data-tool="pdf">Image to PDF</button><button class="tool-tab" data-tool="metadata">Image Metadata Viewer</button></div>
+<div class="tool-panel active" id="panel-compressor">
+<h3>Image Compressor</h3><p class="desc">Reduce image file size with adjustable quality. Your image never leaves your device.</p>
+<label class="drop">📁 Tap or drop an image here<input type="file" class="tool-file" accept="image/*,.webp"></label>
+<div class="tool-controls"><label class="field">Quality <span class="q-val">80%</span><input type="range" class="in-quality" min="10" max="95" value="80"></label><label class="field">Format<select class="in-format"><option value="image/jpeg">JPG</option><option value="image/webp">WEBP</option></select></label><button class="btn btn-primary tool-run">Process</button><a class="btn btn-ghost tool-download" style="display:none">⬇ Download Result</a><button class="btn btn-ghost tool-reset">Reset</button></div>
+<div class="tool-preview"><img alt="Preview of the processed image"><p class="result-line"></p></div></div><div class="tool-panel" id="panel-resizer">
+<h3>Image Resizer</h3><p class="desc">Resize any image to exact pixel dimensions, with optional aspect-ratio lock.</p>
+<label class="drop">📁 Tap or drop an image here<input type="file" class="tool-file" accept="image/*,.webp"></label>
+<div class="tool-controls"><label class="field">Width (px)<input type="number" class="in-w" min="1" placeholder="Width"></label><label class="field">Height (px)<input type="number" class="in-h" min="1" placeholder="Height"></label><label class="field">Keep aspect ratio<input type="checkbox" class="in-keep" checked style="min-height:auto;height:22px"></label><button class="btn btn-primary tool-run">Process</button><a class="btn btn-ghost tool-download" style="display:none">⬇ Download Result</a><button class="btn btn-ghost tool-reset">Reset</button></div>
+<div class="tool-preview"><img alt="Preview of the processed image"><p class="result-line"></p></div></div><div class="tool-panel" id="panel-jpg2png">
+<h3>JPG to PNG Converter</h3><p class="desc">Convert JPG images to lossless PNG format in one tap.</p>
+<label class="drop">📁 Tap or drop an image here<input type="file" class="tool-file" accept="image/*,.webp"></label>
+<div class="tool-controls"><button class="btn btn-primary tool-run">Process</button><a class="btn btn-ghost tool-download" style="display:none">⬇ Download Result</a><button class="btn btn-ghost tool-reset">Reset</button></div>
+<div class="tool-preview"><img alt="Preview of the processed image"><p class="result-line"></p></div></div><div class="tool-panel" id="panel-png2jpg">
+<h3>PNG to JPG Converter</h3><p class="desc">Convert PNG to JPG. Transparent areas are filled with the background colour you choose.</p>
+<label class="drop">📁 Tap or drop an image here<input type="file" class="tool-file" accept="image/*,.webp"></label>
+<div class="tool-controls"><label class="field">Background colour<input type="color" class="in-bg" value="#ffffff" style="padding:4px;height:46px"></label><button class="btn btn-primary tool-run">Process</button><a class="btn btn-ghost tool-download" style="display:none">⬇ Download Result</a><button class="btn btn-ghost tool-reset">Reset</button></div>
+<div class="tool-preview"><img alt="Preview of the processed image"><p class="result-line"></p></div></div><div class="tool-panel" id="panel-webp">
+<h3>WEBP Converter</h3><p class="desc">Convert images to modern WEBP, or convert WEBP files back to PNG or JPG.</p>
+<label class="drop">📁 Tap or drop an image here<input type="file" class="tool-file" accept="image/*,.webp"></label>
+<div class="tool-controls"><label class="field">Output format<select class="in-format"><option value="image/webp">WEBP</option><option value="image/png">PNG</option><option value="image/jpeg">JPG</option></select></label><button class="btn btn-primary tool-run">Process</button><a class="btn btn-ghost tool-download" style="display:none">⬇ Download Result</a><button class="btn btn-ghost tool-reset">Reset</button></div>
+<div class="tool-preview"><img alt="Preview of the processed image"><p class="result-line"></p></div></div><div class="tool-panel" id="panel-cropper">
+<h3>Image Cropper</h3><p class="desc">Crop with a draggable selection box and popular aspect ratios (1:1, 4:5, 16:9, 9:16).</p>
+<label class="drop">📁 Tap or drop an image here<input type="file" class="tool-file" accept="image/*,.webp"></label>
+<div class="tool-controls"><label class="field">Aspect ratio<select class="in-aspect"><option value="free">Free</option><option value="1:1">1:1</option><option value="4:5">4:5</option><option value="16:9">16:9</option><option value="9:16">9:16</option></select></label><label class="field">Selection size<input type="range" class="in-cropsize" min="20" max="95" value="70"></label><button class="btn btn-primary tool-run">Process</button><a class="btn btn-ghost tool-download" style="display:none">⬇ Download Result</a><button class="btn btn-ghost tool-reset">Reset</button></div>
+<div class="tool-preview"><div class="crop-stage"><img class="crop-img" alt="Image loaded in the cropper"></div><p class="result-line"></p></div></div><div class="tool-panel" id="panel-pdf">
+<h3>Image to PDF</h3><p class="desc">Turn an image into a clean, print-ready PDF document — generated entirely in your browser.</p>
+<label class="drop">📁 Tap or drop an image here<input type="file" class="tool-file" accept="image/*,.webp"></label>
+<div class="tool-controls"><label class="field">Page size<select class="in-pagesize"><option value="a4">A4</option><option value="letter">Letter</option><option value="fit">Fit to image</option></select></label><button class="btn btn-primary tool-run">Process</button><a class="btn btn-ghost tool-download" style="display:none">⬇ Download Result</a><button class="btn btn-ghost tool-reset">Reset</button></div>
+<div class="tool-preview"><img alt="Preview of the processed image"><p class="result-line"></p></div></div><div class="tool-panel" id="panel-metadata">
+<h3>Image Metadata Viewer</h3><p class="desc">See file name, type, size, dimensions and — for JPG photos — embedded EXIF camera data, privately on your device.</p>
+<label class="drop">📁 Tap or drop an image here<input type="file" class="tool-file" accept="image/*,.webp"></label>
+<div class="tool-controls"><a class="btn btn-ghost tool-download" style="display:none">⬇ Download Result</a><button class="btn btn-ghost tool-reset">Reset</button></div>
+<div class="tool-preview"><img alt="Preview of the selected image" style="display:none"><div class="meta-out"></div><p class="result-line"></p></div></div>
+</div></section>
+
+<div class="container"><div class="ad-slot" aria-label="Advertisement space">ADVERTISEMENT SPACE — RESERVED</div></div>
+
+<section class="section"><div class="container">
+<h2>Why Use PIN VIDEO DOWNLOADER?</h2><p class="lead">A small, honest utility built around privacy and simplicity.</p>
+<div class="grid grid-4"><div class="card"><div class="icon">⚡</div><h3>Easy to Use</h3><p>Paste a link, preview what is available, and download what you are authorized to use — no complicated steps.</p></div><div class="card"><div class="icon">📱</div><h3>Mobile Friendly</h3><p>Built mobile-first for Android and iPhone browsers, with large touch targets and a fast, light interface.</p></div><div class="card"><div class="icon">🚀</div><h3>Fast Interface</h3><p>No heavy frameworks. Pages and tools load quickly, and image processing happens instantly on your device.</p></div><div class="card"><div class="icon">🔒</div><h3>Privacy Focused</h3><p>Image tools run 100% in your browser. Your files are never uploaded to our servers.</p></div><div class="card"><div class="icon">🆓</div><h3>No Mandatory Registration</h3><p>No sign-up walls. Open the site and use the tools straight away.</p></div><div class="card"><div class="icon">🖼️</div><h3>Free Image Tools</h3><p>Compress, resize, convert, crop, make PDFs and view metadata — eight practical tools, free.</p></div><div class="card"><div class="icon">🧭</div><h3>Simple Navigation</h3><p>Every page is one or two taps away, on desktop and mobile alike.</p></div><div class="card"><div class="icon">🛡️</div><h3>Secure Processing</h3><p>Input validation, file-type and size checks, and a design that never asks for your Pinterest password.</p></div></div>
+</div></section>
+
+<section class="section alt" id="faq"><div class="container">
+<h2>Frequently Asked Questions</h2><p class="lead">Straight answers, no hype.</p>
+<div class="faq-list"><div class="faq-item"><button class="faq-q" aria-expanded="false">What is PIN VIDEO DOWNLOADER?<span class="chev">▾</span></button><div class="faq-a">PIN VIDEO DOWNLOADER is an independent media utility. It validates Pinterest links, explains what can be downloaded with authorized access, lets you download direct media files you own, and includes a free set of image tools that run entirely in your browser.</div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Is the website free?<span class="chev">▾</span></button><div class="faq-a">Yes. The image tools and link validation are free to use and do not require an account. Some features may depend on third-party services in the future, and any change would be announced on this page.</div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Can I download every Pinterest video?<span class="chev">▾</span></button><div class="faq-a">No. Not every Pinterest video can be downloaded. A video may be private, removed, region-restricted, or protected, and downloading is only appropriate when you own the content or have the rights holder's permission. This site never bypasses Pinterest's protections.</div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Does the website work on Android?<span class="chev">▾</span></button><div class="faq-a">Yes. The site is built mobile-first and works in modern Android browsers such as Chrome. The image tools process files on your device, so they also work on slower connections.</div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Does it work on iPhone?<span class="chev">▾</span></button><div class="faq-a">Yes, in a modern iPhone browser such as Safari or Chrome. Some iOS versions handle downloads differently — a file may open in a preview first, from where you can save it using the share option.</div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Do I need an account?<span class="chev">▾</span></button><div class="faq-a">No account is needed for link validation or any of the image tools.</div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Why is a video unavailable?<span class="chev">▾</span></button><div class="faq-a">Common reasons: the pin is private or deleted, the link is a short link that cannot be resolved here, the content is protected, or this copy of the site does not yet have an authorized media integration connected. The downloader explains the specific state whenever it can.</div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Can I download someone else's video?<span class="chev">▾</span></button><div class="faq-a">Only if you have that person's permission or another legal right to do so. Downloading other people's content without permission can infringe copyright. You are responsible for how you use downloaded media.</div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Are my links stored?<span class="chev">▾</span></button><div class="faq-a">No. Links you paste are processed in your browser for validation and are not sent to or stored on our servers by this website. Your theme preference is stored only on your device. See the Privacy Policy for details.</div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">How can I contact support?<span class="chev">▾</span></button><div class="faq-a">Use the Contact Us page. When the form backend is connected, messages are delivered to the site owner; the page also shows a direct email option.</div></div></div>
+</div></section>
+</main>
+<footer class="site-footer"><div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a class="logo" href="index.html" style="color:#fff"><span class="logo-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/><path d="M12 21a9 9 0 1 1 9-9" fill="none" stroke="#fff" stroke-width="0"/></svg></span><span style="margin-left:2px">PIN VIDEO DOWNLOADER</span></a>
+<p>An independent media utility for accessing and downloading your own or authorized Pinterest videos, plus a free set of browser-based image tools. Your files are processed on your device.</p>
+</div>
+<div><h4>Quick Links</h4>
+<a href="index.html">Home</a><a href="index.html#downloader">Video Downloader</a>
+<a href="index.html#tools">Image Tools</a><a href="index.html#how">How It Works</a><a href="index.html#faq">FAQ</a></div>
+<div><h4>Company</h4>
+<a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="copyright.html">Copyright Policy</a></div>
+<div><h4>Legal</h4>
+<a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a>
+<a href="disclaimer.html">Disclaimer</a><a href="cookie-policy.html">Cookie Policy</a></div>
+</div>
+<div class="ad-slot" aria-label="Advertisement space">ADVERTISEMENT SPACE — RESERVED</div>
+<div class="footer-bottom">© <span id="year">2026</span> PIN VIDEO DOWNLOADER. All Rights Reserved.<br>
+PIN VIDEO DOWNLOADER is an independent service and is not affiliated with, endorsed by, or sponsored by Pinterest, Inc. Pinterest is a trademark of Pinterest, Inc.</div>
+</div></footer>
+<script src="script.js" defer></script>
+</body></html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://pinvideodownloader.example.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://pinvideodownloader.example.com/about.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pinvideodownloader.example.com/contact.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://pinvideodownloader.example.com/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://pinvideodownloader.example.com/terms.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://pinvideodownloader.example.com/disclaimer.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://pinvideodownloader.example.com/copyright.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://pinvideodownloader.example.com/cookie-policy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>
